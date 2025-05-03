@@ -1,22 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.lab09.controllers.CityController">
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs112.lab09.controllers.CityController">
    <children>
-      <ImageView fx:id="imageView" fitHeight="210.0" fitWidth="200.0" layoutX="66.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" />
-      <VBox layoutX="346.0" layoutY="19.0" prefHeight="373.0" prefWidth="226.0">
-         <children>
-            <Label fx:id="locationLabel" prefHeight="62.0" prefWidth="226.0" text="Location" />
-            <Label fx:id="dateLabel" prefHeight="62.0" prefWidth="226.0" text="Date" />
-            <Label fx:id="descriptionLabel" prefHeight="62.0" prefWidth="226.0" text="Description" />
-            <Label fx:id="revisedDescriptionLabel" prefHeight="62.0" prefWidth="226.0" text="Revised Description" />
-            <Hyperlink fx:id="source" text="Source" />
-         </children>
-      </VBox>
-      <Button layoutX="239.0" layoutY="407.0" mnemonicParsing="false" onAction="#onClosePopup" prefHeight="38.0" prefWidth="138.0" text="Close" />
+      <SplitPane dividerPositions="0.4987012987012987" layoutX="1.0" layoutY="-1.0" prefHeight="439.0" prefWidth="387.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="459.0" prefWidth="239.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="264.0" fitWidth="190.0" layoutX="-1.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="445.0" prefWidth="243.0">
+               <children>
+                  <VBox layoutY="-1.0" prefHeight="437.0" prefWidth="189.0">
+                     <children>
+                        <Label fx:id="locationLabel" alignment="CENTER" prefHeight="51.0" prefWidth="193.0" text="Location" />
+                        <Label fx:id="dateLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="37.0" prefWidth="189.0" text="Date" />
+                        <Label fx:id="descriptionLabel" layoutX="10.0" layoutY="61.0" prefHeight="81.0" prefWidth="189.0" text="Description" wrapText="true">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="revisedDescriptionLabel" layoutX="10.0" layoutY="98.0" prefHeight="220.0" prefWidth="189.0" text="Revised Description" wrapText="true">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </Label>
+                        <Hyperlink fx:id="hyperlinkReference" prefHeight="47.0" prefWidth="197.0" text="Hyperlink" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Button layoutX="175.0" layoutY="456.0" mnemonicParsing="false" onAction="#handleCloseButton" text="Close" />
    </children>
 </Pane>
